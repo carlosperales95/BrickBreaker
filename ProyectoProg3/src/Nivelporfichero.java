@@ -1,5 +1,3 @@
-
-
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.io.BufferedReader;
@@ -11,7 +9,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
-
 
 public class Nivelporfichero extends JFrame{
 		private static final long serialVersionUID = 1L;	
@@ -30,7 +27,7 @@ public class Nivelporfichero extends JFrame{
 		
 		ventana = new JFrame();
 		ventana.setTitle("NIVEL");
-		ventana.setBounds(100, 100, 400, 500);
+		ventana.setBounds(100, 100, 500, 700);
 		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ventana.getContentPane().setLayout(null);
 		
@@ -40,11 +37,11 @@ public class Nivelporfichero extends JFrame{
 		panelNivel.setBackground(new Color(119, 136, 153));
 
 		panelNivel.setBorder(new LineBorder(new Color(0, 0, 0), 0));
-		panelNivel.setBounds(114, 0, 270, 461);
+		panelNivel.setBounds(0, 0, 500, 700);
 		ventana.getContentPane().add(panelNivel);
 		panelNivel.setLayout(null);
 		
-		FicheroObjetos("prueba1",panelNivel);
+		FicheroObjetos("NivelMuestra",panelNivel);
 
 	}
 		
@@ -62,7 +59,7 @@ public class Nivelporfichero extends JFrame{
 	      try {
 	         // Apertura del fichero y creacion de BufferedReader para poder
 	         // hacer una lectura comoda (disponer del metodo readLine()).
-	         prueba = new File ("C:\\Users\\Jon\\Documents\\uni\\2º\\prog 3\\wokspace\\Carlos\\src\\"+ficheronombre+".txt");
+	         prueba = new File ("src\\files\\"+ficheronombre+".txt");
 	         fr = new FileReader (prueba);
 	         br = new BufferedReader(fr);
 	 
@@ -122,7 +119,8 @@ public class Nivelporfichero extends JFrame{
 	     								
 	     								JLabel bloque = new JLabel();
 	     								bloque.setBounds(x, y, 50, 20);
-	     								bloque.setIcon(new ImageIcon("C:\\Users\\Jon\\Documents\\uni\\2º\\prog 3\\wokspace\\Carlos\\src\\src\\resources\\"+ objeto.substring(coords.length()+1) +".png"));
+	     								bloque.setIcon(new ImageIcon(this.getClass().getResource( "/resources/"+ objeto.substring(coords.length()+1) +".png")));
+	     								
 	     								pan.add(bloque);
 	     								
 	     								barras=0;								
@@ -133,22 +131,8 @@ public class Nivelporfichero extends JFrame{
 	     								System.out.println();
 	     								System.out.println();
 	     								
-	     								break;
-	     							}	
-	     						}
-	     						
-	     						break;
-	     					}
-	     				}
-	     				}
-
-	     			}
-	     			
-	     		}
-	         }
-		
-	           
-		      }
+	     								break;}}break;}}}}}}
+	      		}
 
 		      catch(Exception e){
 		         e.printStackTrace();

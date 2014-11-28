@@ -1,5 +1,3 @@
-
-
 import java.awt.EventQueue;
 
 import javax.swing.ImageIcon;
@@ -22,12 +20,13 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+
 import javax.swing.UIManager;
 
-
-
+@SuppressWarnings("unused")
 public class Editor extends JFrame {
 
+	
 	private static final long serialVersionUID = 1L;
 	
 	private JFrame ventanaeditor;
@@ -46,9 +45,11 @@ public class Editor extends JFrame {
 	 */
 	private void initialize() {
 		
+
+		
 		ventanaeditor = new JFrame();
 		ventanaeditor.setTitle("EDITOR DE NIVELES");
-		ventanaeditor.setBounds(100, 100, 400, 500);
+		ventanaeditor.setBounds(100, 100, 610, 700);
 		ventanaeditor.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ventanaeditor.getContentPane().setLayout(null);
 		
@@ -56,18 +57,18 @@ public class Editor extends JFrame {
 		panelNivel.setBackground(new Color(119, 136, 153));
 
 		panelNivel.setBorder(new LineBorder(new Color(0, 0, 0), 0));
-		panelNivel.setBounds(114, 0, 270, 461);
+		panelNivel.setBounds(114, 0, 500, 700);
 		ventanaeditor.getContentPane().add(panelNivel);
 		panelNivel.setLayout(null);
 		
 		final JPanel recursos = new JPanel();
 		recursos.setBackground(new Color(255, 69, 0));
 		recursos.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
-		recursos.setBounds(0, 0, 115, 461);
+		recursos.setBounds(0, 0, 115, 700);
 		ventanaeditor.getContentPane().add(recursos);
 		recursos.setLayout(null);
 		
-		final JComboBox<String> comboBox = new JComboBox();
+		final JComboBox<String> comboBox = new JComboBox<String>();
 		comboBox.setForeground(new Color(0, 0, 0));
 		comboBox.addItem("Naranja");
 		comboBox.addItem("Azul");
@@ -172,8 +173,8 @@ public class Editor extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				final JLabel bloque = new JLabel();
-				bloque.setBounds(100, 60, 50, 20);
-				bloque.setIcon(new ImageIcon("C:\\Users\\Jon\\Documents\\uni\\2º\\prog 3\\wokspace\\Carlos\\src\\src\\resources\\Bloque"+ comboBox.getSelectedItem().toString() +".png"));
+				bloque.setBounds(200, 250, 50, 20);
+				bloque.setIcon(new ImageIcon(this.getClass().getResource( "/resources/"+ "Bloque"+ comboBox.getSelectedItem().toString() +".png")));
 				
 				bloque.addKeyListener(new KeyAdapter() {
 					@Override
@@ -243,29 +244,33 @@ public class Editor extends JFrame {
 				nivel=nivel+p.getComponents()[i].getX()+"/";
 				nivel=nivel+p.getComponents()[i].getY()+"/";
 				
-				if(((JLabel) p.getComponents()[i]).getIcon().toString().equals("C:\\Users\\Jon\\Documents\\uni\\2º\\prog 3\\wokspace\\Carlos\\src\\src\\resources\\BloqueNaranja.png")){
+				
+
+				
+				if(((JLabel) p.getComponents()[i]).getIcon().toString().equals(this.getClass().getResource( "/resources/BloqueNaranja.png").toString())){
+				
 					
 					nivel=nivel+"BloqueNaranja"+"-";
 					
-				}else{if(((JLabel) p.getComponents()[i]).getIcon().toString().equals("C:\\Users\\Jon\\Documents\\uni\\2º\\prog 3\\wokspace\\Carlos\\src\\src\\resources\\BloqueVerde.png")){
+				}else{if(((JLabel) p.getComponents()[i]).getIcon().toString().equals(this.getClass().getResource( "/resources/BloqueVerde.png").toString())){
 				
 					nivel=nivel+"BloqueVerde"+"-";
 					
-				}else{if(((JLabel) p.getComponents()[i]).getIcon().toString().equals("C:\\Users\\Jon\\Documents\\uni\\2º\\prog 3\\wokspace\\Carlos\\src\\src\\resources\\BloqueMorado.png")){
+				}else{if(((JLabel) p.getComponents()[i]).getIcon().toString().equals(this.getClass().getResource( "/resources/BloqueMorado.png").toString())){
 					
 					nivel=nivel+"BloqueMorado"+"-";
 					
-				}else{if(((JLabel) p.getComponents()[i]).getIcon().toString().equals("C:\\Users\\Jon\\Documents\\uni\\2º\\prog 3\\wokspace\\Carlos\\src\\src\\resources\\BloqueAzul.png")){
+				}else{if(((JLabel) p.getComponents()[i]).getIcon().toString().equals(this.getClass().getResource( "/resources/BloqueAzul.png").toString())){
 					
 					nivel=nivel+"BloqueAzul"+"-";
 					
-				}else{if(((JLabel) p.getComponents()[i]).getIcon().toString().equals("C:\\Users\\Jon\\Documents\\uni\\2º\\prog 3\\wokspace\\Carlos\\src\\src\\resources\\BloqueAmarillo.png")){
+				}else{if(((JLabel) p.getComponents()[i]).getIcon().toString().equals(this.getClass().getResource( "/resources/BloqueAmarillo.png").toString())){
 					
 					nivel=nivel+"BloqueAmarillo"+"-";
-				}else{if(((JLabel) p.getComponents()[i]).getIcon().toString().equals("C:\\Users\\Jon\\Documents\\uni\\2º\\prog 3\\wokspace\\Carlos\\src\\src\\resources\\BloqueDuro.png")){
+				}else{if(((JLabel) p.getComponents()[i]).getIcon().toString().equals(this.getClass().getResource( "/resources/BloqueDuro.png").toString())){
 					
 					nivel=nivel+"BloqueDuro"+"-";
-				}else{if(((JLabel) p.getComponents()[i]).getIcon().toString().equals("C:\\Users\\Jon\\Documents\\uni\\2º\\prog 3\\wokspace\\Carlos\\src\\src\\resources\\BloquePared.png")){
+				}else{if(((JLabel) p.getComponents()[i]).getIcon().toString().equals(this.getClass().getResource( "/resources/BloquePared.png").toString())){
 					
 					nivel=nivel+"BloquePared"+"-";
 					

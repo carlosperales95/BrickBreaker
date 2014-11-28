@@ -1,9 +1,5 @@
 
-
-
 	import java.io.*;
-
-
 
 /**
  * @author Carlos
@@ -20,15 +16,15 @@ public class AccionesFicheros {
 	public static void LeeFichero(String ficheronombre) {
 		
 	    
-	    File prueba = null;
+	    File fichero = null;
 	    FileReader fr = null;
 	    BufferedReader br = null;
 	 
 	      try {
 	         // Apertura del fichero y creacion de BufferedReader para poder
 	         // hacer una lectura comoda (disponer del metodo readLine()).
-	         prueba = new File ("C:\\Users\\Jon\\Documents\\uni\\2º\\prog 3\\wokspace\\Carlos\\src\\"+ficheronombre+".txt");
-	         fr = new FileReader (prueba);
+	         fichero = new File ("src\\files\\"+ficheronombre+".txt");
+	         fr = new FileReader (fichero);
 	         br = new BufferedReader(fr);
 	 
 	         // Lectura del fichero
@@ -61,7 +57,7 @@ public class AccionesFicheros {
 	 
 	        try {
 	        	
-	            fichero = new FileWriter("C:\\Users\\Jon\\Documents\\uni\\2º\\prog 3\\wokspace\\Carlos\\src\\"+ficheronombre+".txt");
+	            fichero = new FileWriter("src\\files\\"+ficheronombre+".txt");
 	            pw = new PrintWriter(fichero);
 	 
 	          
@@ -93,10 +89,10 @@ public class AccionesFicheros {
 	
 	public static void main (String[]args){
 		
-	//EscribeFichero("prueba","hola");
+	EscribeFichero("prueba","hola");
 	//EscribeFichero("prueba2","hola\nhey");
 	//LeeFichero("prueba2");
-	LeeFichero("pruebita");
+	LeeFichero("pruev");
 	System.out.println();
 	System.out.println();
 	System.out.println();
