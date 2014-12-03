@@ -46,8 +46,8 @@ public class JuegoNivel extends JPanel implements KeyListener, ActionListener, R
 
 
 	//	parte grafica
-	static 	JFrame frame;
-	static JPanel panel;
+	static 	JFrame nivel;
+	static JPanel fondo;
 
 	// creando bola, barra y ladrillo
 	Rectangle bola = new Rectangle(bolaX, bolaY, 15, 15);
@@ -67,33 +67,32 @@ public class JuegoNivel extends JPanel implements KeyListener, ActionListener, R
 
 	public static void main(String[] args) { 
 
-		frame = new JFrame();
+		nivel = new JFrame();
 		JuegoNivel game = new JuegoNivel();
 
-		frame.setBounds(450, 25, 500, 700);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		nivel.setBounds(450, 25, 500, 700);
+		nivel.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		JButton button = new JButton("restart");
-		frame.add(button, BorderLayout.SOUTH);
-		frame.setLocationRelativeTo(null);
-		frame.setResizable(false);
-		frame.setVisible(true);
+		nivel.add(button, BorderLayout.SOUTH);
+		nivel.setLocationRelativeTo(null);
+		nivel.setResizable(false);
+		nivel.setVisible(true);
 
-		panel = new JPanel();
-		panel.setBounds(0, 0, 490, 660);
-		panel.setBackground(Color.RED);
-		frame.getContentPane().add(panel);
-		panel.setLayout(null);
-		frame.add(game);
+		fondo = new JPanel();
+		fondo.setBounds(0, 0, 490, 660);
+		nivel.getContentPane().add(fondo);
+		fondo.setLayout(null);
+		nivel.add(game);
 		button.addActionListener(game);
-		frame.setVisible(true);
+		nivel.setVisible(true);
 
-		crealad();
+		crealadrillos();
 
 
 	}
 
 
-	public static void crealad(){
+	public static void crealadrillos(){
 
 		int count=0;
 		
@@ -215,7 +214,7 @@ public class JuegoNivel extends JPanel implements KeyListener, ActionListener, R
 	
 	public void paint(Graphics g) {
 		//		fondo
-		g.setColor(Color.LIGHT_GRAY);
+		g.setColor(Color.gray);
 		g.fillRect(0, 0, 495, 660);
 
 		//		bola
@@ -405,10 +404,12 @@ public class JuegoNivel extends JPanel implements KeyListener, ActionListener, R
 		int barraY = 625;
 
 
-
 		bola = new Rectangle(bolaX, bolaY, 15, 15);
 		barra = new Rectangle(barraX, barraY, 100, 15);
-		ladrillo = new Rectangle[13];
+		ladrillo = new Rectangle[100];
+		nomladrillo = new String[100];
+		
+		crealadrillos();
 
 		movex = -1;
 		movey = -1;
@@ -417,10 +418,6 @@ public class JuegoNivel extends JPanel implements KeyListener, ActionListener, R
 		count = 0;
 		status = null;
 
-		for (int i = 0; i < ladrillo.length; i++) {
-			ladrillo[i] = new Rectangle(0, 0, 50, 20);
-
-		}
 		repaint();
 	}
 	static Image iconToImage(Icon icon) {
