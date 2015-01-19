@@ -62,11 +62,6 @@ public class Player extends ObjetoJuego implements ConstantesFijas{
 		posy = BarraInicioY;
 	}
 
-
-
-
-
-
 	/**
 	 * @return the xSpeed
 	 */
