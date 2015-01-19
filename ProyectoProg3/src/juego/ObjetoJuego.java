@@ -1,3 +1,5 @@
+package juego;
+
 import javax.swing.JLabel;
 
 

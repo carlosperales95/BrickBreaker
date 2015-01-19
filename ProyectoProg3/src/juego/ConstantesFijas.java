@@ -3,10 +3,12 @@
  */
 
 /**
+
  * @author Jon
  *
  */
 
+package juego;
 
 //Imports
 import java.awt.Color;

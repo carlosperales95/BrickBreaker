@@ -1,3 +1,5 @@
+package juego;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;

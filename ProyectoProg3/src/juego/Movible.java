@@ -6,6 +6,8 @@
  * @author Carlos
  *
  */
+package juego;
+
 public interface Movible {
 	
 	

@@ -1,3 +1,5 @@
+package juego;
+
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.io.BufferedReader;
