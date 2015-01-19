@@ -16,7 +16,7 @@ import javax.swing.JLabel;
  * @author Carlos y Jon
  *
  */
-public class Player extends ObjetoJuego implements Movible, ConstantesFijas{
+public class Player extends ObjetoJuego implements ConstantesFijas{
 
 	private int xSpeed;
 
@@ -65,13 +65,7 @@ public class Player extends ObjetoJuego implements Movible, ConstantesFijas{
 
 
 
-	// carlos esto te lo pongo en coment de momento
-	@Override
-	public void MueveObjeto(ObjetoJuego o, boolean dirección) {
 
-		//			if(dirección) o.setPosx(o.getPosx()+1.00);else o.setPosx(o.getPosx()-1.00);
-
-	}
 
 	/**
 	 * @return the xSpeed
